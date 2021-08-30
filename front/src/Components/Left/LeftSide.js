@@ -14,7 +14,7 @@ import profile from "../../Images/profile.jpg";
 
 const LeftSide = () => {
   return (
-    <div className="left h-full w-3/12 fixed flex flex-col items-end xl:items-center justify-between">
+    <div className="left h-full sm:w-2/12 md:w-3/12 fixed hidden sm:flex flex-col items-end xl:items-center justify-between">
       <div className="left-top flex flex-col items-center">
         <div className="logo-menu flex justify-center">
           <a href="#">
