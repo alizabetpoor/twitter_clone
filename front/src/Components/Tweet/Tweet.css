@@ -1,0 +1,14 @@
+.tweet-container ul > li {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.tweet-container svg {
+  cursor: pointer;
+}
+.tweet-container li p {
+  margin-left: 3px;
+}
+.tweet-container:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
