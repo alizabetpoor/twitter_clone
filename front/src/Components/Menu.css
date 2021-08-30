@@ -1,0 +1,34 @@
+.left {
+  background-color: #15202b;
+  overflow-y: scroll;
+}
+.menu > a {
+  font-size: 1.4rem;
+  padding: 6px 20px;
+  font-weight: 400;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.menu > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu li svg {
+  margin-right: 10px;
+}
+.logo-menu {
+  margin-top: 5px;
+  font-size: 30px;
+}
+.logo-menu a {
+  padding: 10px;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+.logo-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile:hover {
+  /* background-color: rgba(255, 255, 255, 0.1); */
+}
