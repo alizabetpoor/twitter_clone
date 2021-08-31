@@ -16,6 +16,10 @@
 .menu li svg {
   font-size: 24px;
 }
+.menu li {
+  display: flex;
+  align-items: center;
+}
 .logo-menu {
   margin-top: 5px;
   font-size: 30px;

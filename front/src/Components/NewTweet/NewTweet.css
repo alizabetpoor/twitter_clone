@@ -1,0 +1,15 @@
+.tweet-textarea {
+  display: flex;
+  align-items: stretch;
+}
+
+.tweet-textarea > textarea {
+  resize: none;
+}
+@media (max-width: 640px) {
+  .newtweet-container {
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

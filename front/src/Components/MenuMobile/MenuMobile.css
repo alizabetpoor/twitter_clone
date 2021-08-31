@@ -1,0 +1,18 @@
+.menu-mobile {
+  background-color: #15202b;
+}
+.menu-mobile ul > li {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+.menu-mobile svg {
+  cursor: pointer;
+  padding: 10px;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+}
+.menu-mobile svg:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

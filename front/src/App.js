@@ -4,7 +4,7 @@ import RightSide from "./Components/Right/RightSide";
 function App() {
   return (
     <div className="App">
-      <div className="container flex flex-row">
+      <div className="app-container flex flex-row relative">
         <RightSide />
         <LeftSide />
       </div>
