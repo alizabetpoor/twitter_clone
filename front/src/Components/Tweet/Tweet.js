@@ -5,7 +5,7 @@ import { BiHeart, BiRepeat, BiUpload, BiMessageRounded } from "react-icons/bi";
 import { SetTweetsProvider } from "../../Containers/Tweets/Tweets";
 import profilephoto from "../../Images/profile.jpg";
 import TweetMore from "../TweetMore/TweetMore";
-const Tweet = ({ tweet }) => {
+const Tweet = ({ tweet, setShowEdit }) => {
   const { increaseOrDecreaseLike } = SetTweetsProvider();
   const [liked, setLiked] = useState(false);
   const [showTweetMore, setShowTweetMore] = useState(false);
@@ -34,7 +34,13 @@ const Tweet = ({ tweet }) => {
               onClick={handleTweetMore}
               className="transition hover:bg-hvtwitter  hover:text-blue-500 rounded-full h-10 w-10 p-3 mr-2"
             />
-            {showTweetMore && <TweetMore setShowTweetMore={setShowTweetMore} />}
+            {showTweetMore && (
+              <TweetMore
+                setShowTweetMore={setShowTweetMore}
+                tweetId={tweet.id}
+                setShowEdit={setShowEdit}
+              />
+            )}
           </div>
         </div>
         <div className="flex justify-end mt-2">

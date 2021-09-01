@@ -1,7 +1,9 @@
 import "./TweetMore.css";
 import { BiEditAlt, BiTrash, BiDotsHorizontalRounded } from "react-icons/bi";
 import { useEffect, useRef } from "react";
-const TweetMore = ({ setShowTweetMore }) => {
+import { SetTweetsProvider } from "../../Containers/Tweets/Tweets";
+const TweetMore = ({ setShowTweetMore, tweetId, setShowEdit }) => {
+  const { deleteTweet } = SetTweetsProvider();
   const showTweetMoreRef = useRef();
   useEffect(() => {
     let handler = (event) => {
@@ -14,6 +16,14 @@ const TweetMore = ({ setShowTweetMore }) => {
       document.removeEventListener("mousedown", handler);
     };
   });
+  const deleteHandler = (tweetId) => {
+    deleteTweet(tweetId);
+    setShowTweetMore(false);
+  };
+  const updateHandler = (tweetId) => {
+    setShowEdit(tweetId);
+    setShowTweetMore(false);
+  };
 
   return (
     <div
@@ -21,11 +31,11 @@ const TweetMore = ({ setShowTweetMore }) => {
       className="tweet-more bg-bgtwitter absolute right-2 z-10 top-0 w-60  shadow-lg rounded-lg border border-gray-200"
     >
       <ul className="flex flex-col items-stretch">
-        <li>
+        <li onClick={() => deleteHandler(tweetId)}>
           <BiTrash />
           <span>Delete</span>
         </li>
-        <li>
+        <li onClick={() => updateHandler(tweetId)}>
           <BiEditAlt />
           <span>Edit</span>
         </li>
