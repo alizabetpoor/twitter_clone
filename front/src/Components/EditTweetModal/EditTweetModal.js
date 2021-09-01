@@ -75,7 +75,6 @@ const EditTweetModal = ({
                 name="tweettext"
                 className="w-full placeholder-gray-400 text-left pr-2 bg-transparent outline-none text-white text-xl"
                 type="text"
-                placeholder="What's happening?"
                 onChange={textareaHandler}
                 value={text}
               ></textarea>

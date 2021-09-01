@@ -3,10 +3,11 @@ import Tweet from "../../Components/Tweet/Tweet";
 import { useState, createContext, useContext } from "react";
 import NewTweet from "../../Components/NewTweet/NewTweet";
 import EditTweetModal from "../../Components/EditTweetModal/EditTweetModal";
+import { useToasts } from "react-toast-notifications";
 
 const TweetsContext = createContext();
 const SetTweetsContext = createContext();
-
+const ToastContext = createContext();
 const Tweets = ({
   showNewTweet,
   changeShowState,
@@ -16,6 +17,7 @@ const Tweets = ({
   editTweet,
   setEditTweet,
 }) => {
+  const useToast = useToasts();
   const sampleName = "ali zabetpoor";
   const sampleUserName = "@alizabetpoor";
   const sampleTime = "2h";
@@ -72,24 +74,26 @@ const Tweets = ({
   return (
     <TweetsContext.Provider value={tweets}>
       <SetTweetsContext.Provider value={setTweets}>
-        <div className="tweets-container w-full pb-14 sm:pb-0">
-          <NewTweet
-            showNewTweet={showNewTweet}
-            changeShowState={changeShowState}
-            setShowNewTweet={setShowNewTweet}
-          />
-          <EditTweetModal
-            showEditModal={showEditModal}
-            setShowEditModal={setShowEditModal}
-            editTweet={editTweet}
-            setEditTweet={setEditTweet}
-          />
-          {tweets.map((tweet) => {
-            return (
-              <Tweet tweet={tweet} key={tweet.id} setShowEdit={setShowEdit} />
-            );
-          })}
-        </div>
+        <ToastContext.Provider value={useToast}>
+          <div className="tweets-container w-full pb-14 sm:pb-0">
+            <NewTweet
+              showNewTweet={showNewTweet}
+              changeShowState={changeShowState}
+              setShowNewTweet={setShowNewTweet}
+            />
+            <EditTweetModal
+              showEditModal={showEditModal}
+              setShowEditModal={setShowEditModal}
+              editTweet={editTweet}
+              setEditTweet={setEditTweet}
+            />
+            {tweets.map((tweet) => {
+              return (
+                <Tweet tweet={tweet} key={tweet.id} setShowEdit={setShowEdit} />
+              );
+            })}
+          </div>
+        </ToastContext.Provider>
       </SetTweetsContext.Provider>
     </TweetsContext.Provider>
   );
@@ -102,6 +106,7 @@ export const TweetsProvider = () => useContext(TweetsContext);
 export const SetTweetsProvider = () => {
   const setTweets = useContext(SetTweetsContext);
   const tweets = useContext(TweetsContext);
+  const { addToast } = useContext(ToastContext);
   const sampleName = "ali zabetpoor";
   const sampleUserName = "@alizabetpoor";
   const sampleTime = "2h";
@@ -116,6 +121,10 @@ export const SetTweetsProvider = () => {
     };
     const newTweets = [...tweets, newTweet];
     setTweets(newTweets);
+    addToast("توییت شما اضافه شد", {
+      appearance: "success",
+      autoDismiss: true,
+    });
   };
   const increaseOrDecreaseLike = (id, state) => {
     const index = tweets.findIndex((tweet) => tweet.id === id);
@@ -132,6 +141,10 @@ export const SetTweetsProvider = () => {
   const deleteTweet = (id) => {
     const newTweets = tweets.filter((tweet) => tweet.id !== id);
     setTweets(newTweets);
+    addToast("توییت شما حذف شد", {
+      appearance: "error",
+      autoDismiss: true,
+    });
   };
   const editTweetFunc = (editedTweet) => {
     const id = editedTweet.id;
@@ -139,6 +152,10 @@ export const SetTweetsProvider = () => {
     const cloneTweets = [...tweets];
     cloneTweets[index].text = editedTweet.text;
     setTweets(cloneTweets);
+    addToast("توییت شما ادیت شد", {
+      appearance: "success",
+      autoDismiss: true,
+    });
   };
 
   return { newTweetFunc, increaseOrDecreaseLike, deleteTweet, editTweetFunc };
