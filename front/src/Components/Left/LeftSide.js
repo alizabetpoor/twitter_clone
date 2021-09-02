@@ -7,6 +7,7 @@ import {
   BiListUl,
   BiUser,
 } from "react-icons/bi";
+import { Link } from "react-router-dom";
 import { IoLogoTwitter } from "react-icons/io5";
 import { FiMoreHorizontal } from "react-icons/fi";
 import "./Left.css";
@@ -17,17 +18,17 @@ const LeftSide = () => {
     <div className="left h-full sm:w-2/12 md:w-3/12 fixed hidden sm:flex flex-col items-end xl:items-center justify-between">
       <div className="left-top flex flex-col items-center">
         <div className="logo-menu flex justify-center">
-          <a href="http://google.com">
+          <Link to="/">
             <IoLogoTwitter />
-          </a>
+          </Link>
         </div>
         <ul className="menu flex flex-col items-center">
-          <a href="http://google.com">
+          <Link to="/">
             <li>
               <BiHomeCircle className="m-0 xl:mr-3 my-2 xl:rounded-full" />
               <p className="hidden xl:block">Home</p>
             </li>
-          </a>
+          </Link>
           <a href="http://google.com">
             <li>
               <BiStoreAlt className="m-0 xl:mr-3 my-2 xl:rounded-full" />
@@ -58,12 +59,12 @@ const LeftSide = () => {
               <p className="hidden xl:block">Lists</p>
             </li>
           </a>
-          <a href="http://google.com">
+          <Link to="/profile">
             <li>
               <BiUser className="m-0 xl:mr-3 my-2 xl:rounded-full" />
               <p className="hidden xl:block">Profile</p>
             </li>
-          </a>
+          </Link>
           <a href="http://google.com">
             <li>
               <FiMoreHorizontal className="m-0 xl:mr-3 my-2 xl:rounded-full" />
