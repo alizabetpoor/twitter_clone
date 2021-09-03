@@ -1,8 +1,12 @@
 import { BiUndo } from "react-icons/bi";
 import profilephoto from "../../Images/profile.jpg";
 import { SetTweetsProvider } from "../../Containers/Tweets/Tweets";
+import { Input } from "antd";
+
 const NewTweetModal = ({ showNewTweet, changeShowState }) => {
   const makeNewTweet = SetTweetsProvider().newTweetFunc;
+  const { TextArea } = Input;
+
   return (
     <div
       className={`newtweet-modal-container hidden sm:${
@@ -26,12 +30,13 @@ const NewTweetModal = ({ showNewTweet, changeShowState }) => {
             </div>
             <div className="w-10/12 flex flex-col">
               <div className="tweet-textarea">
-                <textarea
+                <TextArea
                   name="tweettext"
                   className="w-full placeholder-gray-400 text-left pr-2 bg-transparent outline-none text-white text-xl"
                   type="text"
                   placeholder="What's happening?"
-                ></textarea>
+                  autoSize={{ minRows: 2, maxRows: 10 }}
+                />
               </div>
               <div className="hidden justify-end mr-1 pt-8 sm:flex">
                 <button
