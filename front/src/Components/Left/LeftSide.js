@@ -59,7 +59,7 @@ const LeftSide = () => {
               <p className="hidden xl:block">Lists</p>
             </li>
           </a>
-          <Link to="/profile">
+          <Link to="/profile/alizabetpoor">
             <li>
               <BiUser className="m-0 xl:mr-3 my-2 xl:rounded-full" />
               <p className="hidden xl:block">Profile</p>

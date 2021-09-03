@@ -1,5 +1,4 @@
 import profile from "../../../Images/profile.jpg";
-
 import "./Center.css";
 const HeaderCenter = () => {
   return (

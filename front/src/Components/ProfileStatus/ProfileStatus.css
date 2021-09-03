@@ -1,0 +1,8 @@
+.profile-ul li {
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+}
+.profile-ul svg {
+  margin-right: 4px;
+}

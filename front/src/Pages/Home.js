@@ -4,8 +4,7 @@ import MenuMobile from "../Components/MenuMobile/MenuMobile";
 import { useState } from "react";
 const Home = () => {
   const [showNewTweet, setShowNewTweet] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
-  const [editTweet, setEditTweet] = useState({ id: 0, text: "" });
+
   const changeShowState = () => {
     setShowNewTweet((prev) => !prev);
   };
@@ -15,10 +14,7 @@ const Home = () => {
         showNewTweet={showNewTweet}
         changeShowState={changeShowState}
         setShowNewTweet={setShowNewTweet}
-        showEditModal={showEditModal}
-        setShowEditModal={setShowEditModal}
-        editTweet={editTweet}
-        setEditTweet={setEditTweet}
+        newTweetComp={true}
       />
       <NewTweetCircle changeShowState={changeShowState} />
       <MenuMobile />

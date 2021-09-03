@@ -3,7 +3,7 @@ import Profile from "./Pages/Profile";
 import NotFound from "./Pages/NotFound";
 const Routes = [
   { path: "/", exact: true, component: Home },
-  { path: "/profile", component: Profile },
+  { path: "/profile/:username", component: Profile },
   { component: NotFound },
 ];
 
