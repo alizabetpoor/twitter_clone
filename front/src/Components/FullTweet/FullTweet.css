@@ -1,0 +1,8 @@
+.icon-full-tweet > li {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+.icon-full-tweet > li > svg {
+  cursor: pointer;
+}

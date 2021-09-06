@@ -9,7 +9,7 @@ function App() {
       <Layout>
         <Switch>
           {Routes.map((route, index) => {
-            return <Route {...route} key={index} />;
+            return <Route {...route} key={index} exact />;
           })}
         </Switch>
       </Layout>
