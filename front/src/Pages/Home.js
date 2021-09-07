@@ -1,5 +1,6 @@
 import Tweets from "../Containers/Tweets/Tweets";
 import NewTweetCircle from "../Components/NewTweetCircle/NewTweetCircle";
+import Layout from "../Layout/Layout";
 import MenuMobile from "../Components/MenuMobile/MenuMobile";
 import { useState } from "react";
 const Home = () => {
@@ -10,14 +11,16 @@ const Home = () => {
   };
   return (
     <>
-      <Tweets
-        showNewTweet={showNewTweet}
-        changeShowState={changeShowState}
-        setShowNewTweet={setShowNewTweet}
-        newTweetComp={true}
-      />
-      <NewTweetCircle changeShowState={changeShowState} />
-      <MenuMobile />
+      <Layout>
+        <Tweets
+          showNewTweet={showNewTweet}
+          changeShowState={changeShowState}
+          setShowNewTweet={setShowNewTweet}
+          newTweetComp={true}
+        />
+        <NewTweetCircle changeShowState={changeShowState} />
+        <MenuMobile />
+      </Layout>
     </>
   );
 };

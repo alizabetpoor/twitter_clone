@@ -1,8 +1,11 @@
+import Layout from "../Layout/Layout";
 import FullTweet from "../Components/FullTweet/FullTweet";
 const TweetPage = (props) => {
   return (
     <>
-      <FullTweet {...props} />
+      <Layout>
+        <FullTweet {...props} />
+      </Layout>
     </>
   );
 };

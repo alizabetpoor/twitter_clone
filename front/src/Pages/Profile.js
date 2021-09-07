@@ -1,4 +1,5 @@
 import Tweets from "../Containers/Tweets/Tweets";
+import Layout from "../Layout/Layout";
 import { useState } from "react";
 import ProfileStatus from "../Components/ProfileStatus/ProfileStatus";
 
@@ -9,13 +10,15 @@ const Profile = ({ match }) => {
   };
   return (
     <>
-      <ProfileStatus />
-      <Tweets
-        showNewTweet={showNewTweet}
-        changeShowState={changeShowState}
-        setShowNewTweet={setShowNewTweet}
-        newTweetComp={false}
-      />
+      <Layout>
+        <ProfileStatus />
+        <Tweets
+          showNewTweet={showNewTweet}
+          changeShowState={changeShowState}
+          setShowNewTweet={setShowNewTweet}
+          newTweetComp={false}
+        />
+      </Layout>
     </>
   );
 };

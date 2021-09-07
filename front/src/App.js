@@ -6,13 +6,13 @@ import { Route, Switch } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Layout>
-        <Switch>
-          {Routes.map((route, index) => {
-            return <Route {...route} key={index} exact />;
-          })}
-        </Switch>
-      </Layout>
+      {/* <Layout> */}
+      <Switch>
+        {Routes.map((route, index) => {
+          return <Route {...route} key={index} exact />;
+        })}
+      </Switch>
+      {/* </Layout> */}
     </div>
   );
 }
