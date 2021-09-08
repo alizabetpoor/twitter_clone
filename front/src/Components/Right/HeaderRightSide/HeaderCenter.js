@@ -2,8 +2,6 @@ import profile from "../../../Images/profile.jpg";
 import { withRouter } from "react-router";
 import "./Center.css";
 const HeaderCenter = ({ match }) => {
-  console.log(match);
-
   return (
     <div className="center flex items-center justify-start w-full md:w-4/5 lg:w-1/2 border-r border-l border-b border-gray-600">
       <div className="block sm:hidden ml-3">
